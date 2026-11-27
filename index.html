@@ -340,7 +340,468 @@ footer {
   .times div {
     min-width: 100px;
   }
-}</style>
+}
+/* =================================
+   DESAIN BARU JELAJAH ZONA WAKTU
+   ================================= */
+
+/* 1. WARNA DAN DASAR WEBSITE */
+:root {
+    --biru: #3986e8;
+    --biru-muda: #e8f3ff;
+    --hijau: #35b982;
+    --hijau-muda: #e5f9ef;
+    --ungu: #9670e8;
+    --ungu-muda: #f1eaff;
+    --oranye: #ffad42;
+    --kuning: #fff0b8;
+    --teks: #263b5b;
+    --putih: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: #f0f7ff;
+    color: var(--teks);
+    line-height: 1.7;
+}
+
+/* 2. BAGIAN HEADER DAN MENU */
+header {
+    background: linear-gradient(
+        120deg,
+        #347fe0,
+        #695de0
+    );
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(48, 91, 160, 0.2);
+}
+
+header h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: white;
+    color: #347fe0;
+    transform: translateY(-3px);
+}
+
+/* 3. HALAMAN BERANDA */
+.hero {
+    min-height: 350px;
+    padding: 65px 7%;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #dceeff,
+        #f0eaff,
+        #fff2d9
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: #315fba;
+    margin: 0 0 12px;
+    font-weight: 900;
+    animation: muncul 0.8s ease;
+}
+
+.hero p {
+    font-size: 17px;
+    max-width: 650px;
+    color: #536985;
+    margin-bottom: 25px;
+}
+
+/* 4. TOMBOL */
+button {
+    background: linear-gradient(
+        135deg,
+        #ffb347,
+        #ff8b42
+    );
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(255, 145, 65, 0.25);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 9px 18px rgba(255, 145, 65, 0.35);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* 5. BAGIAN MATERI */
+section {
+    padding: 45px 7%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 27px;
+    color: #315fba;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+section > p {
+    color: #61748c;
+    margin-bottom: 25px;
+}
+
+/* 6. KARTU WIB WITA WIT */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 25px;
+    box-shadow: 0 7px 22px rgba(57, 94, 145, 0.09);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 14px 28px rgba(57, 94, 145, 0.16);
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.card h4 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #586c84;
+    font-size: 14px;
+}
+
+/* KARTU WIB */
+.card.wib {
+    border-top: 6px solid var(--biru);
+    background: linear-gradient(
+        160deg,
+        white,
+        var(--biru-muda)
+    );
+}
+
+.card.wib h3 {
+    color: var(--biru);
+}
+
+/* KARTU WITA */
+.card.wita {
+    border-top: 6px solid var(--hijau);
+    background: linear-gradient(
+        160deg,
+        white,
+        var(--hijau-muda)
+    );
+}
+
+.card.wita h3 {
+    color: var(--hijau);
+}
+
+/* KARTU WIT */
+.card.wit {
+    border-top: 6px solid var(--ungu);
+    background: linear-gradient(
+        160deg,
+        white,
+        var(--ungu-muda)
+    );
+}
+
+.card.wit h3 {
+    color: var(--ungu);
+}
+
+/* 7. CONTOH PERBEDAAN WAKTU */
+.example {
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 7px 22px rgba(57, 94, 145, 0.08);
+    margin-top: 20px;
+}
+
+.times {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.times div {
+    min-width: 140px;
+    flex: 1;
+    padding: 22px 15px;
+    border-radius: 18px;
+    background: #eaf3ff;
+    text-align: center;
+    color: #315fba;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.times div:nth-child(2) {
+    background: #e5f9ef;
+    color: #239b6b;
+}
+
+.times div:nth-child(3) {
+    background: #f1eaff;
+    color: #8058ce;
+}
+
+.times div:hover {
+    transform: scale(1.06);
+}
+
+.times strong {
+    font-size: 26px;
+}
+
+/* 8. KUIS DAN PILIHAN JAWABAN */
+#kuis .card {
+    text-align: center;
+    max-width: 750px;
+    margin: 20px auto;
+    border-top: 6px solid var(--oranye);
+}
+
+#kuis .card button {
+    margin: 7px;
+}
+
+#hasil {
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 9. FOOTER */
+footer {
+    background: linear-gradient(
+        120deg,
+        #347fe0,
+        #695de0
+    );
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* 10. ANIMASI */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 11. KELAS UNTUK FITUR TAMBAHAN */
+
+/* Gambar peta Indonesia */
+.map-container {
+    background: white;
+    padding: 22px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 7px 22px rgba(57, 94, 145, 0.09);
+}
+
+.map-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Kartu materi interaktif */
+.material-card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 7px 20px rgba(57, 94, 145, 0.1);
+    transition: 0.3s;
+}
+
+.material-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Tombol game */
+.game-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #8c69e8, #bd80ed);
+    color: white;
+    padding: 16px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.game-button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 18px rgba(140, 105, 232, 0.3);
+}
+
+/* Kotak narator */
+.audio-box {
+    background: #fff3d7;
+    border-radius: 18px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.audio-box audio {
+    max-width: 100%;
+}
+
+/* Ilustrasi dekoratif */
+.floating {
+    animation: melayang 3s ease-in-out infinite;
+}
+
+@keyframes melayang {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 12. TAMPILAN HP DAN TABLET */
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 35px 20px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    .times {
+        flex-direction: column;
+    }
+
+    .times div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+}
+</style>
 </head>
 
 <body>
